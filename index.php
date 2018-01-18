@@ -58,32 +58,61 @@
 		<!-- Head Libs -->
 		<script src="vendor/modernizr/modernizr.min.js"></script>
 </head>
-<body id="page-top" class="landing-page">
-<div class="navbar-wrapper">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php"><img src="img/logo.png" width="125px" height="100px"></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="page-scroll" href="index.php">Home</a></li>
-                        <li><a class="page-scroll" href="#">Kamers</a></li>
-                        <li><a class="page-scroll" href="#">Restaurant</a></li>
-                        <li><a class="page-scroll" href="#">Evenementen</a></li>
-                        <li><a class="page-scroll" href="#">Deals</a></li>
-                        <li><a class="page-scroll" href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-</div>
+
+<body class="body">
+<header id="header" class="header-narrow" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 0, 'stickySetTop': '0'}">
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-logo">
+									<a href="index.php">
+										<img alt="Porto" width="100" height="100" src="img/logo.png">
+									</a>
+								</div>
+							</div>
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-nav">
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+											<i class="fa fa-bars"></i>
+										</button>
+										<ul class="header-social-icons social-icons hidden-xs">
+											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+											<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+											<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+										</ul>
+										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+											<nav>
+												<ul class="nav nav-pills" id="mainNav">
+													<li class="active">
+														<a data-hash data-hash-offset="70" href="index.php">Home</a>
+													</li>
+													<li>
+														<a data-hash data-hash-offset="70" href="kamers.php">Kamers</a>
+													</li>
+													<li>
+														<a data-hash data-hash-offset="70" href="restaurant.php">Restaurant</a>
+													</li>
+													<li>
+														<a data-hash data-hash-offset="70" href="evenementen.php">Evenementen</a>
+													</li>
+													<li>
+														<a data-hash data-hash-offset="70" href="deals.php">Deals</a>
+													</li>
+													<li>
+														<a data-hash data-hash-offset="70" href="contact.php">Contact Ons</a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
 
 				<div class="slider-container rev_slider_wrapper" style="height: 1000px;">
 					<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'sliderLayout': 'fullscreen', 'fullScreenOffset': '0'}">
