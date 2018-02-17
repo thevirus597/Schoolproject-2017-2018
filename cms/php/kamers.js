@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var table = $('.usertable').DataTable({
+  var table = $('.kamerstable').DataTable({
     "paging": true,
     "bLengthChange": false,
     "ordering": true,
@@ -13,7 +13,7 @@ $(document).ready(function() {
     var data = table.row($(this).parents('tr')).data();
     var id = data[0];      
     $.ajax({
-      url: 'php/delete_user.php',
+      url: 'php/delete_kamer.php',
       type: 'POST',
       data: {
         id: id
@@ -21,7 +21,7 @@ $(document).ready(function() {
       success: function() {
         console.log('hey');
         setTimeout(function() {
-          $('.content').load('usertable.php');
+          $('.content').load('php/roomtable.php');
         }, 10);
       }
     });
@@ -30,33 +30,28 @@ $(document).ready(function() {
   });
 
 
-
   // Klant info in Modal
   $('.update').click(function(event) {
     var data = table.row($(this).parents('tr')).data();
     var id = data[0];
     $.ajax({
-      url: 'php/fetch_user.php',
+      url: 'php/fetch_kamers.php',
       type: 'POST',
       dataType: "json",
       data: {
         id: id
       },
       success: function(data) {
-        $('.name').val(data.name);
-        $('.surname').val(data.surname);
-        $('.username').val(data.username);
+        $('.kamertype').val(data.kamertype);
+        $('.prijs').val(data.prijs);
+        $('.kamerinfo').val(data.kamer_info);
         $('.id').val(data.id);
-        $('.level').val(data.user_level);
-        $('.password').val(data.password);
-        $('.image-tn').attr('src',data.photo);
-        $('#update_data_Modal').modal('show');
+        $('.bedden').val(data.bedden);
+        $('.image-tn').attr('src',"../"+data.photo_path);
+        $('#edit_kamer_Modal').modal('show');
       }
     });
 
 
   });
-
-  
-});
-
+  });

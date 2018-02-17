@@ -5520,6 +5520,7 @@ html.boxed .pricing-table .plan, html.boxed .pricing-table h3 {
 
 html.webkit .thumb-info .thumb-info-wrapper {
 	margin: 4px 4px 3px 4px;
+	height: 250px;
 }
 
 html.webkit .full-width .thumb-info .thumb-info-wrapper,

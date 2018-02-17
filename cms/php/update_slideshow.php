@@ -3,14 +3,10 @@ session_start();
 
 include 'dbconnection.php';
 
-if (isset($_POST['insert'])) {
-  $name = $_POST['name'];
-  $surname = $_POST['surname'];
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $encrypt_pass = password_hash($password, PASSWORD_DEFAULT);
-  $level = $_POST['level'];
-  $insert = $_POST['insert'];
+if (isset($_POST["update"])){
+  $caption = $_POST['caption'];
+  $id = $_POST['id'];
+  $update = $_POST['update'];
 
   $file = $_FILES["image"];
   $error = array();
@@ -28,27 +24,27 @@ if (isset($_POST['insert'])) {
     print_r($error);
   }
   if(empty($error) == true){
-    $path = "../img/" . $file_name;
-    $photopath = "img/" . $file_name;
+    $path = "../../img/slideshow/" . $file_name;
+    $photopath = "img/slideshow/" . $file_name;
     move_uploaded_file($file_tmp, $path);
-    
-    $sql = "INSERT INTO cms_user(surname, name, photo, username, password, user_level)
-    VALUES('$surname', '$name','$photopath' , '$username', '$encrypt_pass', '$level')";
-    $result = $con->query($sql);
-    
-    
-    if ($result) {
+
+    $sql = mysqli_query($con,"UPDATE homepagina
+     SET photo_path='$photopath',
+     photo_caption='$caption'
+     WHERE id='$id'");
+          //$result = $con->query($sql);
+
+    if ($sql) {
       echo "success";
-      header('Location:../dashboard_gebruikers.php');
+      header('Location:../dashboard_home.php');
     }else{
       echo mysqli_error($con);
     } 
   }else {
     echo "Er is iets misgegaan!";
   }
-}else {
+}else{
   echo "Deze file mag niet opgeload worden!";
 } 
 
 ?>
-

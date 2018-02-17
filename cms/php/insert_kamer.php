@@ -4,12 +4,10 @@ session_start();
 include 'dbconnection.php';
 
 if (isset($_POST['insert'])) {
-  $name = $_POST['name'];
-  $surname = $_POST['surname'];
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $encrypt_pass = password_hash($password, PASSWORD_DEFAULT);
-  $level = $_POST['level'];
+  $kamertype = $_POST['kamertype'];
+  $kamerinfo = $_POST['kamerinfo'];
+  $prijs = $_POST['prijs'];
+  $bedden = $_POST['bedden'];
   $insert = $_POST['insert'];
 
   $file = $_FILES["image"];
@@ -28,18 +26,18 @@ if (isset($_POST['insert'])) {
     print_r($error);
   }
   if(empty($error) == true){
-    $path = "../img/" . $file_name;
-    $photopath = "img/" . $file_name;
+    $path = "../../img/kamers/" . $file_name;
+    $photopath = "img/kamers/" . $file_name;
     move_uploaded_file($file_tmp, $path);
     
-    $sql = "INSERT INTO cms_user(surname, name, photo, username, password, user_level)
-    VALUES('$surname', '$name','$photopath' , '$username', '$encrypt_pass', '$level')";
+    $sql = "INSERT INTO kamerspagina(kamertype, kamer_info, prijs, photo_path, bedden)
+    VALUES('$kamertype','$kamerinfo', '$prijs','$photopath','$bedden')";
     $result = $con->query($sql);
     
     
     if ($result) {
       echo "success";
-      header('Location:../dashboard_gebruikers.php');
+      header('Location:../dashboard_kamers.php');
     }else{
       echo mysqli_error($con);
     } 

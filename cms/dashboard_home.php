@@ -1,5 +1,12 @@
-<?php include 'php/dbconnection.php' ?>
-<?php include'php/nav_check.php' ?>
+<?php
+if(!isset($_SESSION)){
+    session_start();
+    session_regenerate_id();
+}?>
+<?php include 'php/dbconnection.php';
+include'php/nav_check.php'; 
+$sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,11 +31,94 @@
 <body>
 
     <div id="wrapper">
-        
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>Home</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="home.php">Home</a>
+                    </li>
+                </ol>
+            </div>
         </div>
+        <button type="button" name="upload" id="upload" data-toggle="modal" data-target="#add_slide_Modal" class="">Upload photo</button>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row"><?php while ($row = mysqli_fetch_assoc($sql)) {
+                $photo = $row['photo_path'];?>
+                <div class="col-md-4">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
 
+                            <div class="product-imitation" >
+                                <img id="slide_url_<?php echo $row['id'] ?>" src="../<?php echo $photo ?>" class="img-responsive">
+                            </div>
+                            <div class="product-desc">
 
-        <!-- Mainly scripts -->
+                                <div class="product-name">
+                                    <span id="slide_caption_<?php echo $row['id'] ?>"><?php echo $row['photo_caption']; ?></span>
+                                </div>
+                                <div class="m-t text-right">
+
+                                    <button name="update" id='<?php echo $row['id'] ?>' class="btn btn-xs btn-outline btn-primary update_slide" data-toggle="modal" data-target="#edit_slide_Modal">Edit <i class="fa fa-long-arrow-right update"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><?php  }?>
+            </div>
+        </div>
+    </div>
+    <div id="add_slide_Modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Slide Toevoegen</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="php/insert_slideshow.php" method="POST" enctype="multipart/form-data">
+                        <label>Photo</label>
+                        <input type="file" name="image" id="image" class="form-control" required="true" />
+                        <br/>
+                        <label>Caption</label>
+                        <input type="text" name="caption" id="caption" class="form-control caption" required="true" />
+                        <br/>
+                        <br>
+                        <input type="submit" name="upload" id="upload" value="Upload" class="btn btn-success" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="edit_slide_Modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Slide Bewerken</h4>
+                </div>
+                <div class="modal-body">
+                    <center><img id="slide_modal_image" src="" alt="" class="img-thumbnail"></center>
+                    <br/>
+                    <form action="php/update_slideshow.php" method="POST" enctype="multipart/form-data">
+                        <input type="text" id="slide_modal_id" class="hidden" name="slide_id">
+                        <label>Photo</label>
+                        <input type="file" name="image" id="image" class="form-control image" required="true" />
+                        <br/>
+                        <label>Caption</label>
+                        <input type="text" name="caption" id="slide_modal_caption" class="form-control caption" required="true" />
+                        <br/>
+                        <input type="text" name="id" id="id" class="id hidden" />
+                        <br>
+                        <input type="submit" name="update" id="update" value="Upload" class="btn btn-success" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -66,5 +156,12 @@
 
     <!-- Toastr -->
     <script src="js/plugins/toastr/toastr.min.js"></script>
+
+    <script src="php/slideshow.js"></script>
+    <script>
+        $(function() {
+            $('.home').addClass('active');
+      });
+  </script>
 </body>
 </html>

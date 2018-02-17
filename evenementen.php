@@ -1,446 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <title>FEVIE STER | EVENEMENTEN</title>
+	<title>FEVIE STER | EVENEMENTEN</title>
 
-    <!-- Favicon -->
-		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<!-- Web Fonts  -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+	<!-- Web Fonts  -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
 
-		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="vendor/animate/animate.min.css">
-		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
-		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
-		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
-		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/animate/animate.min.css">
+	<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
 
-		<!-- Theme CSS -->
-		<link rel="stylesheet" href="css/theme.css">
-		<link rel="stylesheet" href="css/theme-elements.css">
-		<link rel="stylesheet" href="css/theme-blog.css">
-		<link rel="stylesheet" href="css/theme-shop.css">
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="css/theme.css">
+	<link rel="stylesheet" href="css/theme-elements.css">
+	<link rel="stylesheet" href="css/theme-blog.css">
+	<link rel="stylesheet" href="css/theme-shop.css">
 
-		<!-- Current Page CSS -->
-		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
-		<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css">
-		<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css">
+	<!-- Current Page CSS -->
+	<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
+	<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css">
+	<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css">
 
-		<!-- Skin CSS -->
-		<link rel="stylesheet" href="css/skins/default.css">
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="css/skins/default.css">
 
-		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="css/custom.css">
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="css/custom.css">
 
-		<!-- Head Libs -->
-		<script src="vendor/modernizr/modernizr.min.js"></script>
+	<!-- Head Libs -->
+	<script src="vendor/modernizr/modernizr.min.js"></script>
 </head>
 
 <body class="body">
-<header id="header" class="header-narrow" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 0, 'stickySetTop': '0'}">
-				<div class="header-body">
-					<div class="header-container container">
+	<header id="header" class="header-narrow" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 0, 'stickySetTop': '0'}">
+		<div class="header-body">
+			<div class="header-container container">
+				<div class="header-row">
+					<div class="header-column">
+						<div class="header-logo">
+							<a href="index.php">
+								<img alt="Porto" width="100" height="100" src="img/logo.png">
+							</a>
+						</div>
+					</div>
+					<div class="header-column">
 						<div class="header-row">
-							<div class="header-column">
-								<div class="header-logo">
-									<a href="index.php">
-										<img alt="Porto" width="100" height="100" src="img/logo.png">
-									</a>
-								</div>
-							</div>
-							<div class="header-column">
-								<div class="header-row">
-									<div class="header-nav">
-										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
-											<i class="fa fa-bars"></i>
-										</button>
-										<ul class="header-social-icons social-icons hidden-xs">
-											<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-											<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-											<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-										</ul>
-										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
-											<nav>
-												<ul class="nav nav-pills" id="mainNav">
-													<li class="">
-														<a data-hash data-hash-offset="70" href="index.php">Home</a>
-													</li>
-													<li class="">
-														<a data-hash data-hash-offset="70" href="kamers.php">Kamers</a>
-													</li>
-													<li class="">
-														<a data-hash data-hash-offset="70" href="restaurant.php">Restaurant</a>
-													</li>
-													<li class="active">
-														<a data-hash data-hash-offset="70" href="evenementen.php">Evenementen</a>
-													</li>
-													<li>
-														<a data-hash data-hash-offset="70" href="deals.php">Deals</a>
-													</li>
-													<li>
-														<a data-hash data-hash-offset="70" href="contact.php">Contact Ons</a>
-													</li>
-												</ul>
-											</nav>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
-
-			<div role="main" class="main">
-
-				<section class="page-header">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<ul class="breadcrumb">
-									<li><a href="index.php">Home</a></li>
-									<li class="active">Evenementen</li>
+							<div class="header-nav">
+								<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+									<i class="fa fa-bars"></i>
+								</button>
+								<ul class="header-social-icons social-icons hidden-xs">
+									<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+									<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+									<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 								</ul>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<h1>Evenementen</h1>
+								<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+									<nav>
+										<ul class="nav nav-pills" id="mainNav">
+											<li class="">
+												<a data-hash data-hash-offset="70" href="index.php">Home</a>
+											</li>
+											<li class="">
+												<a data-hash data-hash-offset="70" href="kamers.php">Kamers</a>
+											</li>
+											<li class="">
+												<a data-hash data-hash-offset="70" href="restaurant.php">Restaurant</a>
+											</li>
+											<li class="active">
+												<a data-hash data-hash-offset="70" href="evenementen.php">Evenementen</a>
+											</li>
+											<li>
+												<a data-hash data-hash-offset="70" href="deals.php">Deals</a>
+											</li>
+											<li>
+												<a data-hash data-hash-offset="70" href="contact.php">Contact Ons</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-
-				<div class="container">
-
-					<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
-						<li data-option-value="*" class="active"><a href="#">Show All</a></li>
-						<li data-option-value=".websites"><a href="#">Websites</a></li>
-						<li data-option-value=".logos"><a href="#">Logos</a></li>
-						<li data-option-value=".brands"><a href="#">Brands</a></li>
-						<li data-option-value=".medias"><a href="#">Medias</a></li>
-					</ul>
-
-					<hr>
-
-					<div class="row">
-
-						<div class="sort-destination-loader sort-destination-loader-showing">
-							<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
-								<li class="col-md-4 isotope-item brands">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Presentation</span>
-														<span class="thumb-info-type">Brand</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item medias">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten thumb-info-no-zoom">
-												<span class="thumb-info-wrapper">
-													<span class="owl-carousel owl-theme nav-inside m-none" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 3000}">
-														<span>
-															<img src="img/projects/project-1.jpg" class="img-responsive" alt="">
-														</span>
-														<span>
-															<img src="img/projects/project-1-2.jpg" class="img-responsive" alt="">
-														</span>
-													</span>
-
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Porto Watch</span>
-														<span class="thumb-info-type">Media</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item logos">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-2.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Identity</span>
-														<span class="thumb-info-type">Logo</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item brands">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-3.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Watch Mockup</span>
-														<span class="thumb-info-type">Brand</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item logos">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-4.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Three Bottles</span>
-														<span class="thumb-info-type">Logo</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item brands">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-5.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Company T-Shirt</span>
-														<span class="thumb-info-type">Brand</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item websites">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-6.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Mobile Mockup</span>
-														<span class="thumb-info-type">Website</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item medias">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-7.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Porto Label</span>
-														<span class="thumb-info-type">Media</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item logos">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-23.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Business Folders</span>
-														<span class="thumb-info-type">Logo</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item websites">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-24.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Tablet Screen</span>
-														<span class="thumb-info-type">Website</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item medias">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-25.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Black Watch</span>
-														<span class="thumb-info-type">Media</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item websites">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-26.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Monitor Mockup</span>
-														<span class="thumb-info-type">Website</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item websites">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-27.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Porto Screens</span>
-														<span class="thumb-info-type">Website</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-								<li class="col-md-4 isotope-item brands">
-									<div class="portfolio-item">
-										<a href="portfolio-single-small-slider.html">
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="img/projects/project-28.jpg" class="img-responsive" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Okler Bottle</span>
-														<span class="thumb-info-type">Brand</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-
 				</div>
+			</div>
+		</div>
+	</header>
 
+	<div role="main" class="main">
+
+		<section class="page-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="breadcrumb">
+							<li><a href="index.php">Home</a></li>
+							<li class="active">Evenementen</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Evenementen</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="container">
+
+			<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
+				<li data-option-value="*" class="active"><a href="#">Show All</a></li>
+				<li data-option-value=""><a href="#"></a></li>
+			</ul>
+
+			<hr>
+
+			<div class="row">
+				<div class="sort-destination-loader sort-destination-loader-showing">
+					<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
+						<li class="col-md-4 isotope-item brands">
+							<div class="portfolio-item">
+								<a href="#">
+									<span class="thumb-info thumb-info-lighten">
+										<span class="thumb-info-wrapper">
+											<img src="img/projects/project.jpg" class="img-responsive" alt="">
+											<span class="thumb-info-title">
+												<span class="thumb-info-inner">Presentation</span>
+												<span class="thumb-info-type">Brand</span>
+											</span>
+											<span class="thumb-info-action">
+												<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+						</li>						
+					</ul>
+				</div>
 			</div>
 
+		</div>
 
-			<!-- Vendor -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-		<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
-		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
-		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-		<script src="vendor/isotope/jquery.isotope.min.js"></script>
-		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="vendor/vide/vide.min.js"></script>
-		
-		<!-- Theme Base, Components and Settings -->
-		<script src="js/theme.js"></script>
-		
-		<!-- Current Page Vendor and Views -->
-		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-		<script src="js/views/view.contact.js"></script>
-		
-		<!-- Theme Custom -->
-		<script src="js/custom.js"></script>
-		
-		<!-- Theme Initialization Files -->
-		<script src="js/theme.init.js"></script>
+	</div>
 
-		<!-- Examples -->
-		<script src="js/examples/examples.portfolio.js"></script>
+
+	<!-- Vendor -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+	<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/common/common.min.js"></script>
+	<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
+	<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+	<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
+	<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+	<script src="vendor/isotope/jquery.isotope.min.js"></script>
+	<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="vendor/vide/vide.min.js"></script>
+	
+	<!-- Theme Base, Components and Settings -->
+	<script src="js/theme.js"></script>
+	
+	<!-- Current Page Vendor and Views -->
+	<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="js/views/view.contact.js"></script>
+	
+	<!-- Theme Custom -->
+	<script src="js/custom.js"></script>
+	
+	<!-- Theme Initialization Files -->
+	<script src="js/theme.init.js"></script>
+
+	<!-- Examples -->
+	<script src="js/examples/examples.portfolio.js"></script>
 
 
 </body>
