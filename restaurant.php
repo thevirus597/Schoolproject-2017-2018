@@ -114,8 +114,8 @@ include 'php/dbconnection.php';
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<ul class="breadcrumb">
-							<li><a href="index.php">Home</a></li>
+						<ul class="breadcrumb broodcrumb">
+							<li><a href="index.php" class="broodcrumb">Home</a></li>
 							<li class="active">Restaurant</li>
 						</ul>
 					</div>
@@ -179,6 +179,16 @@ include 'php/dbconnection.php';
 			<!-- Examples -->
 			<script src="js/examples/examples.portfolio.js"></script>
 
-
+			<script type="text/javascript">
+				$(document).keydown(function(e) {
+					if (e.ctrlKey && e.keyCode == 67 ) {
+						window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+					}else if (e.ctrlKey && e.keyCode == 77 ) {
+						window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+					}else if (e.ctrlKey && e.keyCode == 83 ) {
+						window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+					}
+				});
+			</script>
 		</body>
 		</html>

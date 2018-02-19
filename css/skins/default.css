@@ -1,17 +1,17 @@
 a {
-	color: #0088cc;
+	color: #243344;
 }
 
 a:hover {
-	color: #0099e6;
+	color: #efc319;;
 }
 
 a:focus {
-	color: #0099e6;
+	color: #efc319;
 }
 
 a:active {
-	color: #0077b3;
+	color: #efc319;;
 }
 
 html .heading-primary,
@@ -165,12 +165,21 @@ p.drop-caps.drop-caps-style-2:first-letter {
 }
 
 ul.nav-pills > li.active > a {
-	background-color: #0088cc;
+	background-color: #efc319 !important;
+	color: #243344 !important;
 }
 
 ul.nav-pills > li.active > a:hover,
 ul.nav-pills > li.active > a:focus {
-	background-color: #0088cc;
+	background-color: #efc319 !important;
+	color: #243344 !important;
+}
+.broodcrumb{
+	color: #efc319 !important;
+}
+
+.broodcrumb > .active{
+	color: #fff !important;
 }
 
 html ul.nav-pills-primary a {
@@ -374,7 +383,7 @@ html .label-light {
 
 html .btn-primary {
 	color: #ffffff;
-	background-color: #0088cc;
+	background-color: #243344;
 	border-color: #0088cc #0088cc #006699;
 }
 

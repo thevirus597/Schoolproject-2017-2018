@@ -1,3 +1,6 @@
+<?php 
+include 'php/dbconnection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,8 +113,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<ul class="breadcrumb">
-							<li><a href="index.php">Home</a></li>
+						<ul class="breadcrumb broodcrumb">
+							<li><a href="index.php" class="broodcrumb">Home</a></li>
 							<li class="active">Evenementen</li>
 						</ul>
 					</div>
@@ -128,74 +131,89 @@
 
 			<ul class="nav nav-pills sort-source" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
 				<li data-option-value="*" class="active"><a href="#">Show All</a></li>
-				<li data-option-value=""><a href="#"></a></li>
-			</ul>
 
-			<hr>
+				<?php 
+				$sql = "SELECT * FROM evenementenpagina ORDER BY id ASC";
+				$result = mysqli_query($con,$sql);
+				if(mysqli_num_rows($result)>0){
+					while($row=mysqli_fetch_assoc($result)){ ?> <li data-option-value=".<?php echo $row['evenement_naam'] ?>"><a href="#"><?php echo $row['evenement_naam'] ?></a></li><?php }} ?>
+				</ul>
 
-			<div class="row">
-				<div class="sort-destination-loader sort-destination-loader-showing">
-					<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
-						<li class="col-md-4 isotope-item brands">
-							<div class="portfolio-item">
-								<a href="#">
-									<span class="thumb-info thumb-info-lighten">
-										<span class="thumb-info-wrapper">
-											<img src="img/projects/project.jpg" class="img-responsive" alt="">
-											<span class="thumb-info-title">
-												<span class="thumb-info-inner">Presentation</span>
-												<span class="thumb-info-type">Brand</span>
-											</span>
-											<span class="thumb-info-action">
-												<span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
+				<hr>
+				
+				<div class="row">
+					<div class="sort-destination-loader sort-destination-loader-showing">
+
+						<ul class="portfolio-list sort-destination" data-sort-id="portfolio"><?php 
+						$sql = "SELECT * FROM evenementenpagina ORDER BY id ASC";
+						$result = mysqli_query($con,$sql);
+						if(mysqli_num_rows($result)>0){
+							while($row=mysqli_fetch_assoc($result)){ ?>
+							<li class="col-md-4 isotope-item <?php echo $row['evenement_naam'] ?>">
+								<div class="portfolio-item">
+									<a href="evenement_detail.php?id=<?php echo $row['id'];?>">
+										<span class="thumb-info thumb-info-centered-info thumb-info-hide-info-hover">
+											<span class="thumb-info-wrapper">
+												<img src="<?php echo $row['cover_photo'] ?>" class="img-responsive" alt="">
+												<span class="thumb-info-title">
+													<span class="thumb-info-inner"><?php echo $row['evenement_naam'] ?></span>
+													<!-- <span class="thumb-info-type">Project Type</span> -->
+												</span>
 											</span>
 										</span>
-									</span>
-								</a>
-							</div>
-						</li>						
-					</ul>
+									</a>
+								</div>
+							</li><?php }} ?>
+						</ul>
+					</div>
 				</div>
 			</div>
-
 		</div>
 
-	</div>
 
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+		<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/common/common.min.js"></script>
+		<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
+		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
+		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<script src="vendor/isotope/jquery.isotope.min.js"></script>
+		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="vendor/vide/vide.min.js"></script>
 
-	<!-- Vendor -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-	<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-	<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="vendor/common/common.min.js"></script>
-	<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
-	<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-	<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
-	<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-	<script src="vendor/isotope/jquery.isotope.min.js"></script>
-	<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<script src="vendor/vide/vide.min.js"></script>
-	
-	<!-- Theme Base, Components and Settings -->
-	<script src="js/theme.js"></script>
-	
-	<!-- Current Page Vendor and Views -->
-	<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-	<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-	<script src="js/views/view.contact.js"></script>
-	
-	<!-- Theme Custom -->
-	<script src="js/custom.js"></script>
-	
-	<!-- Theme Initialization Files -->
-	<script src="js/theme.init.js"></script>
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
 
-	<!-- Examples -->
-	<script src="js/examples/examples.portfolio.js"></script>
+		<!-- Current Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="js/views/view.contact.js"></script>
 
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
 
-</body>
-</html>
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
+
+		<!-- Examples -->
+		<script src="js/examples/examples.portfolio.js"></script>
+		<script type="text/javascript">
+			$(document).keydown(function(e) {
+				if (e.ctrlKey && e.keyCode == 67 ) {
+					window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+				}else if (e.ctrlKey && e.keyCode == 77 ) {
+					window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+				}else if (e.ctrlKey && e.keyCode == 83 ) {
+					window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+				}
+			});
+		</script>
+
+	</body>
+	</html>

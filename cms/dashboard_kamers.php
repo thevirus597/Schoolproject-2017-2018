@@ -2,7 +2,13 @@
 if(!isset($_SESSION)){
     session_start();
     session_regenerate_id();
-}?>
+}
+
+if(isset($_SESSION['id'])){
+}else{
+    header("Location: index.php");
+}
+?>
 <?php include 'php/dbconnection.php';
 include'php/nav_check.php'; 
 $sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
@@ -29,6 +35,8 @@ $sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
     <link href="css/style.css" rel="stylesheet">
 
     <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/plugins/sweetalert/sweetalert.css" />
 </head>
 <body>
 
@@ -80,9 +88,9 @@ $sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
 
 
                                         if (mysqli_num_rows($sql) > 0) {
-                                         while ($row = mysqli_fetch_assoc($sql)) {
-                                             ?>
-                                             <tr class="gradeX">
+                                           while ($row = mysqli_fetch_assoc($sql)) {
+                                               ?>
+                                               <tr class="gradeX">
                                                 <td><?php echo $row['id']; ?></td>
                                                 <td><?php echo $row['kamertype']; ?></td>       
                                                 <td><button type="button" rel="tooltip" title="Bijwerken" id='<?php echo $row['id'] ?>' data-toggle="modal" data-target="#edit_kamer_Modal" class="btn btn-success btn-simple btn-xs update">
@@ -125,21 +133,21 @@ $sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
                 <h4 class="modal-title">Slide Toevoegen</h4>
             </div>
             <div class="modal-body">
-                <form action="php/insert_kamer.php" method="POST" enctype="multipart/form-data">
+                <form id="add_form" action="php/insert_kamer.php" method="POST" enctype="multipart/form-data">
                     <label>Kamertype</label>
-                    <input type="text" name="kamertype" id="kamertype" class="form-control" required="true" />
+                    <input type="text" name="kamertype" id="kamertype" data-msg-required="Vul dit veld in!" class="form-control" required="true" />
                     <br/>
                     <label>Kamer Info</label>
-                    <textarea name="kamerinfo" id="kamerinfo" class="form-control" required="true"></textarea>
+                    <textarea name="kamerinfo" id="kamerinfo" data-msg-required="Vul dit veld in!" class="form-control" required="true"></textarea>
                     <br/>
                     <label>Prijs</label>
-                    <input type="text" name="prijs" id="prijs" class="form-control caption" required="true" />
+                    <input type="text" name="prijs" id="prijs" data-msg-required="Vul dit veld in!" class="form-control caption" required="true" />
                     <br/>
                     <label>Photo</label>
-                    <input type="file" name="image" id="image" class="form-control caption" required="true" />
+                    <input type="file" name="image" id="image" data-msg-required="Vul dit veld in!" class="form-control caption" required="true" />
                     <br/>
                     <label>Aantal bedden</label>
-                    <input type="text" name="bedden" id="bedden" class="form-control caption" required="true" />
+                    <input type="text" name="bedden" id="bedden" data-msg-required="Vul dit veld in!" class="form-control caption" required="true" />
                     <br/>
                     <br>
                     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
@@ -156,22 +164,22 @@ $sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
                 <h4 class="modal-title">Slide Toevoegen</h4>
             </div>
             <div class="modal-body">
-                <form action="php/update_kamer.php" method="POST" enctype="multipart/form-data">
+                <form id="update_form" action="php/update_kamer.php" method="POST" enctype="multipart/form-data">
                     <center><img src="" alt="" class="center img-thumbnail image-tn"></center>
                     <label>Kamertype</label>
                     <input type="text" name="kamertype" id="kamertype" class="form-control kamertype" required="true" />
                     <br/>
                     <label>Kamer Info</label>
-                    <textarea name="kamerinfo" id="kamerinfo" class="form-control kamerinfo" required="true"></textarea>
+                    <textarea name="kamerinfo" id="kamerinfo" data-msg-required="Vul dit veld in!" class="form-control kamerinfo" required="true"></textarea>
                     <br/>
                     <label>Prijs</label>
-                    <input type="text" name="prijs" id="prijs" class="form-control caption prijs" required="true" />
+                    <input type="text" name="prijs" id="prijs" data-msg-required="Vul dit veld in!" class="form-control caption prijs" required="true" />
                     <br/>
                     <label>Photo</label>
-                    <input type="file" name="image" id="image" class="form-control caption image" required="true" />
+                    <input type="file" name="image" id="image" data-msg-required="Vul dit veld in!" class="form-control caption image" required="true" />
                     <br/>
                     <label>Aantal bedden</label>
-                    <input type="text" name="bedden" id="bedden" class="form-control caption bedden" required="true" />
+                    <input type="text" name="bedden" id="bedden" data-msg-required="Vul dit veld in!" class="form-control caption bedden" required="true" />
                     <br/>
                     <div>
                         <input hidden type="text" name="id" id="id" class="id" />
@@ -185,6 +193,7 @@ $sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
 </div>
 
 <!-- Mainly scripts -->
+<script src="js/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -230,11 +239,11 @@ $sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
 <script src="js/plugins/jeditable/jquery.jeditable.js"></script>
 <script src="js/plugins/dataTables/datatables.min.js"></script>
 
-
+<script src="js/jquery.validation/jquery.validation.min.js"></script>
 
 
 <script>
- function fnClickAddRow() {
+   function fnClickAddRow() {
     $('#editable').dataTable().fnAddData( [
         "Custom row",
         "New row",
@@ -248,6 +257,8 @@ $sql = mysqli_query($con,"SELECT * FROM homepagina ORDER BY id ASC");?>
     $(function() {
         $('.kamers').addClass('active');
     });
+    $('#add_form').validate();
+    $('#update_form').validate();
 </script>
 </body>
 </html>

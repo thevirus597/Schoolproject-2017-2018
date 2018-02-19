@@ -1,3 +1,6 @@
+<?php 
+include 'php/dbconnection.php';	
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,8 +114,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<ul class="breadcrumb">
-							<li><a href="index.php">Home</a></li>
+						<ul class="breadcrumb broodcrumb">
+							<li><a href="index.php" class="broodcrumb">Home</a></li>
 							<li class="active">Deals</li>
 						</ul>
 					</div>
@@ -124,41 +127,103 @@
 				</div>
 			</div>
 		</section>
+		<div role="main" class="main">
 
+			<div class="container">
+				<?php 
+				$sql = "SELECT * FROM dealspagina ORDER BY id ASC";
+				$result = mysqli_query($con,$sql);
+				if(mysqli_num_rows($result)>0){
+					while($row=mysqli_fetch_assoc($result)){
+						?>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="blog-posts">
 
-		<!-- Vendor -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-		<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="vendor/common/common.min.js"></script>
-		<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
-		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
-		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-		<script src="vendor/isotope/jquery.isotope.min.js"></script>
-		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="vendor/vide/vide.min.js"></script>
-		
-		<!-- Theme Base, Components and Settings -->
-		<script src="js/theme.js"></script>
-		
-		<!-- Current Page Vendor and Views -->
-		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-		<script src="js/views/view.contact.js"></script>
-		
-		<!-- Theme Custom -->
-		<script src="js/custom.js"></script>
-		
-		<!-- Theme Initialization Files -->
-		<script src="js/theme.init.js"></script>
+									<article class="post post-large">
+										<div class="post-image">
+											<div class="owl-carousel owl-theme" data-plugin-options="{'items':1}">
+												<div>
+													<div class="img-thumbnail">
+														<img class="img-responsive" src="<?php echo $row['photo_path']; ?>" alt="" width="1000px" height="250px">
+													</div>
+												</div>
+											</div>
+										</div>
 
-		<!-- Examples -->
-		<script src="js/examples/examples.portfolio.js"></script>
+										<div class="post-date">
+											<span class="day">10</span>
+											<span class="month">Aug</span>
+										</div>
 
+										<div class="post-content">
 
-	</body>
-	</html>
+											<h2><?php echo $row['deal_naam']; ?></h2>
+											<p><?php echo $row['over_deal']; ?></p>
+
+										</div>
+									</article>
+
+							<!-- <ul class="pagination pagination-lg pull-right">
+								<li><a href="#">«</a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">»</a></li>
+							</ul>
+						-->
+					</div>
+				</div>
+
+			</div><?php }} ?>
+
+		</div>
+
+	</div>
+
+	<!-- Vendor -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+	<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/common/common.min.js"></script>
+	<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
+	<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+	<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
+	<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+	<script src="vendor/isotope/jquery.isotope.min.js"></script>
+	<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="vendor/vide/vide.min.js"></script>
+	
+	<!-- Theme Base, Components and Settings -->
+	<script src="js/theme.js"></script>
+	
+	<!-- Current Page Vendor and Views -->
+	<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="js/views/view.contact.js"></script>
+	
+	<!-- Theme Custom -->
+	<script src="js/custom.js"></script>
+	
+	<!-- Theme Initialization Files -->
+	<script src="js/theme.init.js"></script>
+
+	<!-- Examples -->
+	<script src="js/examples/examples.portfolio.js"></script>
+
+	<script type="text/javascript">
+		$(document).keydown(function(e) {
+			if (e.ctrlKey && e.keyCode == 67 ) {
+				window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+			}else if (e.ctrlKey && e.keyCode == 77 ) {
+				window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+			}else if (e.ctrlKey && e.keyCode == 83 ) {
+				window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+			}
+		});
+	</script>
+</body>
+</html>

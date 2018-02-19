@@ -26,12 +26,12 @@
 
             </div>
             <h4>Welkom bij de cms van hotel "Fevie Ster"</h4><br>
-            <form class="m-t" role="form" action="php/cms_login.php" method="POST">
+            <form class="m-t" role="form" id="loginform" action="php/cms_login.php" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Gebruikersnaam" required="">
+                    <input type="text" class="form-control" data-msg-required="Vul uw gebruikersnaam in!" name="username" placeholder="Gebruikersnaam" required="">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Wachtwoord" required="">
+                    <input type="password" class="form-control" data-msg-required="Vul uw wachtwoord in!" name="password" placeholder="Wachtwoord" required="">
                 </div>
                 <button type="submit" name="login" class="btn btn-primary block full-width m-b">Login</button>
 
@@ -46,6 +46,10 @@
     <!-- Mainly scripts -->
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validation/jquery.validation.min.js"></script>
+    <script type="text/javascript">
+        $('#loginform').validate();
+    </script>
 
 </body>
 

@@ -2,7 +2,14 @@
 if(!isset($_SESSION)){
 	session_start();
 	session_regenerate_id();
-}?>
+}
+
+if(isset($_SESSION['id'])){
+}else{
+	header("Location: index.php");
+}
+
+?>
 <?php include 'php/dbconnection.php';
 include'php/nav_check.php';
 ?>
@@ -57,6 +64,7 @@ include'php/nav_check.php';
 
 
 	<!-- Mainly scripts -->
+	<script src="js/plugins/sweetalert/sweetalert.min.js"></script>
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>

@@ -36,6 +36,7 @@
 		<link rel="stylesheet" href="css/theme-elements.css">
 		<link rel="stylesheet" href="css/theme-blog.css">
 		<link rel="stylesheet" href="css/theme-shop.css">
+		<link rel="stylesheet" href="css/print.min.css">
 
 		<!-- Current Page CSS -->
 		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
@@ -175,7 +176,7 @@
 							data-transform_in="y:[100%];s:500;"
 							data-transform_out="opacity:0;s:500;"
 							style="z-index: 5"
-							data-mask_in="x:0px;y:0px;">Boek Nu!</a>
+							data-mask_in="x:0px;y:0px;">Reserveer een kamer!</a>
 							
 						</li><?php }} ?>
 					</ul>
@@ -188,7 +189,7 @@
 						<div class="col-md-6">
 
 							<h2 class="mb-sm mt-sm"><strong>Reserveer een Kamer</h2></strong>
-							<form id="contactForm" action="php/contact-form.php" method="POST">
+							<form id="bookForm" action="" method="POST">
 								<div class="row">
 									<div class="form-group">
 										<div class="col-md-6">
@@ -209,8 +210,8 @@
 								<div class="row">
 									<div class="form-group">
 										<div class="col-md-6">
-											<label>Email address *</label>
-											<input type="email" value="" data-msg-required="Vul hier uw email address." data-msg-email="Vul a.u.b een geldige email addres in." maxlength="100" class="form-control" name="email" id="email" required>
+											<label>Telefoonnummer *</label>
+											<input type="number" value="" data-msg-required="Vul hier uw email address." data-msg-email="Vul a.u.b een geldige email addres in." maxlength="100" class="form-control" name="email" id="email" required>
 										</div>
 									</div>
 								</div>
@@ -232,140 +233,126 @@
 										</div>
 									</div>
 								</div>
-								<!-- <div class="row">
-									<div class=" col-md-6 form-group">
-	                  <div class="col-md-12">
 
-	                  </div>
-	                </div>
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-6">
+											<label>Aantal personen *</label>
+											<input type="text" value="" data-msg-required="Vul hier uw ID nummer in." maxlength="10" class="form-control" name="" id="" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-6">
+											<label>Check In*</label>
+											<input type="text" value=""  maxlength="100" class="form-control" name="date" id="date" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-6">
+											<label>Check Out*</label>
+											<input type="text" value="" maxlength="100" class="form-control" name="date" id="date" required>
+										</div>
+									</div>
+								</div>
 
-	                <div class="form-group col-md-6">
-	                  <div class="col-md-12">
+								
+								<br>
+								<br>
+								<div class="row">
+									<div class="col-md-3"></div>
+									<div class="col-md-6">
+										
+									</div>
+								</div>
+							</form>
+							<input type="button" value="Plaats Reservering" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Laden..." id="button" onclick="printJS({ printable:'bookForm',type:'html', documentTitle:'Reservatiedocument',header:'Reservatiegegevens',font:'TimesNewRoman',font_size:'16pt'})">
+							
+						</div>
+						<div class="col-md-6">
 
-	                  </div>
-	                </div>
-	            </div> -->
-	            <div class="row">
-	            	<div class="form-group">
-	            		<div class="col-md-6">
-	            			<label>Check out</label>
-	            			<input type="text" value=""  maxlength="100" class="form-control" name="date" id="date" required>
-	            		</div>
-	            		<div class="row">
-	            			<div class="form-group">
-	            				<div class="col-md-6">
-	            					<label>Check in</label>
-	            					<input type="text" value="" maxlength="10" class="form-control" name="date" id="date" required>
-	            				</div>
-	            			</div>
-	            		</div>
-	            	</div>
-	            </div>
+							<h4 class="heading-primary mt-lg">"We welcome your<strong> stay"</strong></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-	            <div class="row">
-	            	<div class="dropdown">
-	            		<div class="form-group">
-	            			<div class="col-md-12">
-	            				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type Kamer
-	            					<span class="caret"></span></button>
-	            					<ul class="dropdown-menu">
-	            						<li><a href="#">Eenpersoonskamer</a></li>
-	            						<li><a href="#">Tweepersoonskamer</a></li>
-	            						<li><a href="#">Familiekamer</a></li>
-	            					</ul>
-	            				</div>
-	            			</div>
-	            		</div>
-	            	</div>
-	            	<br>
-	            	<br>
-	            	<div class="row">
-	            		<div class="col-md-3"></div>
-	            		<div class="col-md-6">
-	            			<input type="submit" value="Plaats Reservering" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Laden...">
-	            		</div>
-	            	</div>
-	            </form>
-	        </div>
-	        <div class="col-md-6">
+							<hr>
 
-	        	<h4 class="heading-primary mt-lg">"We welcome your<strong> stay"</strong></h4>
-	        	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<h4 class="heading-primary">Voor meer <strong>Info</strong></h4>
+							<ul class="list list-icons list-icons-style-3 mt-xlg">
+								<li><i class="fa fa-map-marker"></i> <strong>Addres:</strong> Antondrachtenweg # 257, Paramaribo, Suriname</li>
+								<li><i class="fa fa-phone"></i> <strong>Telefoon:</strong> (+597) 456-789</li>
+								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">info@5sterren.com</a></li>
+							</ul>
 
-	        	<hr>
+							<hr>
 
-	        	<h4 class="heading-primary">Voor meer <strong>Info</strong></h4>
-	        	<ul class="list list-icons list-icons-style-3 mt-xlg">
-	        		<li><i class="fa fa-map-marker"></i> <strong>Addres:</strong> Antondrachtenweg # 257, Paramaribo, Suriname</li>
-	        		<li><i class="fa fa-phone"></i> <strong>Telefoon:</strong> (+597) 456-789</li>
-	        		<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">info@5sterren.com</a></li>
-	        	</ul>
+							<h4 class="heading-primary">Openings<strong>Tijden</strong></h4>
+							<ul class="list list-icons list-dark mt-xlg">
+								<li><i class="fa fa-clock-o"></i> Maandag - Vrijdag - 9am tot 5pm</li>
+								<li><i class="fa fa-clock-o"></i> Zaterdag - Zondag - 9am tot 3pm</li>
+								<li><i class="fa fa-clock-o"></i> Feestdagen - 9am tot 12pm</li>
+							</ul>
 
-	        	<hr>
+						</div>
 
-	        	<h4 class="heading-primary">Openings<strong>Tijden</strong></h4>
-	        	<ul class="list list-icons list-dark mt-xlg">
-	        		<li><i class="fa fa-clock-o"></i> Maandag - Vrijdag - 9am tot 5pm</li>
-	        		<li><i class="fa fa-clock-o"></i> Zaterdag - Zondag - 9am tot 3pm</li>
-	        		<li><i class="fa fa-clock-o"></i> Feestdagen - 9am tot 12pm</li>
-	        	</ul>
-
-	        </div>
-
-	    </div>
-	</div>
-</div>
-</div>
-</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
-<!-- Vendor -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="vendor/common/common.min.js"></script>
-<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
-<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
-<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-<script src="vendor/isotope/jquery.isotope.min.js"></script>
-<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="vendor/vide/vide.min.js"></script>
+	<!-- Vendor -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+	<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/common/common.min.js"></script>
+	<script src="vendor/jquery.validation/jquery.validation.min.js"></script>
+	<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+	<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
+	<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+	<script src="vendor/isotope/jquery.isotope.min.js"></script>
+	<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="vendor/vide/vide.min.js"></script>
 
-<!-- Theme Base, Components and Settings -->
-<script src="js/theme.js"></script>
+	<!-- Theme Base, Components and Settings -->
+	<script src="js/theme.js"></script>
 
-<!-- Current Page Vendor and Views -->
-<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script src="js/views/view.contact.js"></script>
+	<!-- Current Page Vendor and Views -->
+	<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="js/views/view.contact.js"></script>
 
-<!-- Theme Custom -->
-<script src="js/custom.js"></script>
+	<!-- Theme Custom -->
+	<script src="js/custom.js"></script>
 
-<!-- Theme Initialization Files -->
-<script src="js/theme.init.js"></script>
+	<!-- Theme Initialization Files -->
+	<script src="js/theme.init.js"></script>
 
-<!-- Examples -->
-<script src="js/examples/examples.portfolio.js"></script>
+	<!-- Examples -->
+	<script src="js/examples/examples.portfolio.js"></script>
 
-<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
 
-<!-- Head Libs -->
-<script src="vendor/modernizr/modernizr.min.js"></script>
+	<!-- Head Libs -->
+	<script src="vendor/modernizr/modernizr.min.js"></script>
+
+	<script src="js/print.min.js"></script>
 
 
-<script>
+	<script>
 
-	$(document).ready(function () {
+		$(document).ready(function () {
 
-		$('body').scrollspy({
-			target: '.navbar-fixed-top',
-			offset: 80
-		});
+			$('body').scrollspy({
+				target: '.navbar-fixed-top',
+				offset: 80
+			});
 
         // Page scrolling feature
         $('a.page-scroll').bind('click', function(event) {
@@ -378,37 +365,37 @@
         });
     });
 
-	var cbpAnimatedHeader = (function() {
-		var docElem = document.documentElement,
-		header = document.querySelector( '.navbar-default' ),
-		didScroll = false,
-		changeHeaderOn = 200;
-		function init() {
-			window.addEventListener( 'scroll', function( event ) {
-				if( !didScroll ) {
-					didScroll = true;
-					setTimeout( scrollPage, 250 );
+		var cbpAnimatedHeader = (function() {
+			var docElem = document.documentElement,
+			header = document.querySelector( '.navbar-default' ),
+			didScroll = false,
+			changeHeaderOn = 200;
+			function init() {
+				window.addEventListener( 'scroll', function( event ) {
+					if( !didScroll ) {
+						didScroll = true;
+						setTimeout( scrollPage, 250 );
+					}
+				}, false );
+			}
+			function scrollPage() {
+				var sy = scrollY();
+				if ( sy >= changeHeaderOn ) {
+					$(header).addClass('navbar-scroll')
 				}
-			}, false );
-		}
-		function scrollPage() {
-			var sy = scrollY();
-			if ( sy >= changeHeaderOn ) {
-				$(header).addClass('navbar-scroll')
+				else {
+					$(header).removeClass('navbar-scroll')
+				}
+				didScroll = false;
 			}
-			else {
-				$(header).removeClass('navbar-scroll')
+			function scrollY() {
+				return window.pageYOffset || docElem.scrollTop;
 			}
-			didScroll = false;
-		}
-		function scrollY() {
-			return window.pageYOffset || docElem.scrollTop;
-		}
-		init();
+			init();
 
-	})();
+		})();
 
-	$(document).ready(function(){
+		$(document).ready(function(){
       var date_input=$('input[name="date"]'); //Checkin en Checkout veld hebben de naam "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
       var options={
@@ -422,7 +409,25 @@
       date_input.datepicker(options);
   });
 
-</script>
+		// document.addEventListener("keydown", keyDownTextField, false);
+
+		// function keyDownTextField(e) {
+		// 	var keyCode = e.keyCode;
+		// 	if(keyCode==17 && keyCode==67) {
+		// 		window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+		// 	} else {
+		// 	}
+		// }
+		$(document).keydown(function(e) {
+			if (e.ctrlKey && e.keyCode == 67 ) {
+				window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+			}else if (e.ctrlKey && e.keyCode == 77 ) {
+				window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+			}else if (e.ctrlKey && e.keyCode == 83 ) {
+				window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+			}
+		});
+	</script>
 
 </body>
 </html>

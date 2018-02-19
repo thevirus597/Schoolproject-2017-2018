@@ -1,5 +1,16 @@
 <?php include 'php/dbconnection.php' ?>
 <?php include'php/nav_check.php' ?>
+<?php 
+if(!isset($_SESSION)){
+    session_start();
+    session_regenerate_id();
+}
+
+if(isset($_SESSION['id'])){
+}else{
+    header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -21,13 +32,16 @@
     <!-- selector-plugin -->
     <link rel="stylesheet" href="css/bootstrap-select.min.css" />
 
+    <link rel="stylesheet" href="css/plugins/sweetalert/sweetalert.css" />
+
+
 </head>
 
 <body>
 
     <div id="wrapper">
 
-        
+
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
                 <h2>Gebruikers</h2>
@@ -124,21 +138,21 @@
                 <h4 class="modal-title">Gebruiker Toevoegen</h4>
             </div>
             <div class="modal-body">
-                <form action="php/insert_user.php" method="POST" enctype="multipart/form-data">
+                <form action="php/insert_user.php" id="insertform" method="POST" enctype="multipart/form-data">
                     <label>Naam</label>
-                    <input type="text" name="name" id="name" class="form-control" required="true" />
+                    <input type="text" name="name" id="name" data-msg-required="Vul uw naam in!" class="form-control" required="true" />
                     <br/>
                     <label>Familienaam</label>
-                    <input type="text" name="surname" id="surname" class="form-control" required="true"/>
+                    <input type="text" name="surname" data-msg-required="Vul uw familienaam in!" id="surname" class="form-control" required="true"/>
                     <br/>
                     <label>Gebruikersnaam</label>
-                    <input type="text" name="username" id="username" class="form-control" required="true"/>
+                    <input type="text" name="username" id="username" data-msg-required="Vul uw gebruikersnaam in!" class="form-control" required="true"/>
                     <br/>
-                    <label>Password</label>
-                    <input type="text" name="password" id="password" class="form-control" required="true"/>
+                    <label>Wachtwoord</label>
+                    <input type="text" name="password" id="password" data-msg-required="Vul uw wachtwoord in!" class="form-control" required="true"/>
                     <br/>
-                    <label>Photo</label>
-                    <input type="file" name="image" id="image" class="form-control" required="true"/>
+                    <label>Foto</label>
+                    <input type="file" name="image" id="image" data-msg-required="Plaats een foto!" class="form-control" required="true"/>
                     <br/>
                     <label>Rechten</label>
                     <div>
@@ -171,19 +185,19 @@
                     <center><img src="" alt="" class="center img-thumbnail image-tn"></center>
                     <br/>
                     <label>Naam</label>
-                    <input type="text" name="name" id="name" class="form-control name" required="true"/>
+                    <input type="text" name="name" data-msg-required="Vul uw naam in!" id="name" class="form-control name" required="true"/>
                     <br/>
                     <label>Familienaam</label>
-                    <input type="text" name="surname" id="surname" class="form-control surname" required="true"/>
+                    <input type="text" name="surname" id="surname" data-msg-required="Vul uw familienaam in!" class="form-control surname" required="true"/>
                     <br/>
                     <label>Gebruikersnaam</label>
-                    <input type="text" name="username" id="username" class="form-control username" required="true"/>
+                    <input type="text" name="username" id="username" data-msg-required="Vul uw gebruikersnaam in!" class="form-control username" required="true"/>
                     <br/>
-                    <label>Password</label>
-                    <input type="text" name="password" id="password" class="form-control password" required="true"/>
+                    <label>Wachtwoord</label>
+                    <input type="text" name="password" id="password" data-msg-required="Vul uw wachtwoord in!" class="form-control password" required="true"/>
                     <br/>
-                    <label>Photo</label>
-                    <input type="file" name="image" id="image" class="form-control image" required="true"/>
+                    <label>Foto</label>
+                    <input type="file" name="image" id="image" data-msg-required="Plaats een foto!" class="form-control image" required="true"/>
                     <br/>
                     <label>Rechten</label>
                     <div>
@@ -208,6 +222,7 @@
 
 
 <!-- Mainly scripts -->
+<script src="js/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -220,11 +235,15 @@
 <script src="js/inspinia.js"></script>
 <script src="js/plugins/pace/pace.min.js"></script>
 
-<!--     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>    -->
 <!-- selector plugin -->
 <script src="js/bootstrap-select.js"></script>
 
+
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+
+
 <script src="php/user.js"></script>
+<script src="js/jquery.validation/jquery.validation.min.js"></script>
 
 <!-- Page-Level Scripts -->
 <script>
@@ -238,11 +257,14 @@
 
 }
 </script>
-    <script>
-        $(function() {
-            $('.gebruikers').addClass('active');
-      });
-  </script>
+<script>
+    $(function() {
+        $('.gebruikers').addClass('active');
+    });
+
+    $('#insertform').validate();
+    $('#update_form').validate();
+</script>
 
 </body>
 
