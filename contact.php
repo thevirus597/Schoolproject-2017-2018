@@ -301,11 +301,11 @@
 
 			$(document).keydown(function(e) {
 				if (e.ctrlKey && e.keyCode == 67 ) {
-					window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+					window.open("cms/",'_blank');
 				}else if (e.ctrlKey && e.keyCode == 77 ) {
-					window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+					window.open("cms/",'_blank');
 				}else if (e.ctrlKey && e.keyCode == 83 ) {
-					window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
+					window.open("cms/",'_blank');
 				}
 			});
 		</script>
