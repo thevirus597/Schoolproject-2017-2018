@@ -21,6 +21,7 @@ if (isset($_POST['login'])) {
   $result = $stmt->get_result();
   $rows= $result->num_rows; //Get number of rows
 
+
   if ($rows > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
      $hash_pwd = $row['password'];
@@ -29,7 +30,7 @@ if (isset($_POST['login'])) {
    $hash = password_verify($password,$hash_pwd);
 
    if ($hash == 0) {
-     header("");
+        header("location: ../index.php?signin=error");
    }else {
        $stmt = $con->prepare('SELECT * FROM  cms_user WHERE username =? AND password =?'); //Prepared Statement For Extra Security
        $stmt->bind_param('ss',$username,$password);
@@ -41,22 +42,22 @@ if (isset($_POST['login'])) {
        $rows= $result->num_rows; //Get number of rows
 
        if ($rows == 0) {
-        
-       }
-       else {
-         $_SESSION['id'] = $id;
-         header("Location: ../dashboard_home.php");
-       }
+        header("location: ../index.php?signin=error");
+      }
+      else {
+       $_SESSION['id'] = $id;
+       header("Location: ../dashboard_home.php");
      }
-   }else {
-    
    }
+ }else {
+  header("location: ../index.php?signin=error");
+}
 
- }
+}
 
 
 
 
 
 
- ?>
+?>
