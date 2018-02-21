@@ -57,7 +57,7 @@
 			margin: 0px !important;
 		}
 		.kamer-tn{
-			height:325px;
+			height:300px;
 		}
 	}
 </style>
@@ -204,6 +204,18 @@
 
 				</div>
 
+				<footer id="footer">
+					<div class="footer-copyright">
+						<div class="container">
+							<div class="row">
+								
+								<div class="center">
+									<p>Copyright © 2018 | Fevie Ster | All Rights Reserved</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
 
 
 				<!-- Vendor -->

@@ -126,7 +126,7 @@ include'php/nav_check.php';
         					<input type="text" name="event_name" id="event_name" data-msg-required="Vul dit veld in!" class="form-control event_name" required="true"/>
         					<br/>
         					<label>Over Evenement</label>
-        					<textarea name="about_event" id="about_event" data-msg-required="Vul dit veld in!" class="form-control about_event" required="true"></textarea>
+        					<textarea name="about_event" id="about_event" data-msg-required="Vul dit veld in!" class="form-control about_event"></textarea>
         					<br/>
         					<label>Cover Foto</label>
         					<input type="file" name="event_cover" id="event_cover" data-msg-required="Vul dit veld in!" class="form-control event_cover" required="true"/>

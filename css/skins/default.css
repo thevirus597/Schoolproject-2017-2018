@@ -17,7 +17,7 @@ a:active {
 html .heading-primary,
 html .lnk-primary,
 html .text-color-primary {
-	color: #0088cc !important;
+	color: #EFC319  !important;
 }
 
 html .heading.heading-primary h1,
@@ -384,12 +384,12 @@ html .label-light {
 html .btn-primary {
 	color: #ffffff;
 	background-color: #243344;
-	border-color: #0088cc #0088cc #006699;
+	border-color: #243344;
 }
 
 html .btn-primary:hover {
-	border-color: #0099e6 #0099e6 #0077b3;
-	background-color: #0099e6;
+	border-color: #ffffff;
+	background-color: #EFC319;
 }
 
 html .btn-primary:active,
@@ -1513,7 +1513,7 @@ html.dark section.section-default-scale-9 {
 }
 
 section.page-header h1 {
-	border-bottom-color: #0088cc;
+	border-bottom-color: #EFC319;
 }
 
 section.page-header.custom-product {
@@ -2498,7 +2498,7 @@ html[dir="rtl"] .tabs.tabs-vertical.tabs-right .nav-tabs li.active a:focus {
 .list.list-icons.list-icons-style-3 li a:first-child > .fa:first-child,
 .list.list-icons.list-icons-style-3 li > .icons:first-child,
 .list.list-icons.list-icons-style-3 li a:first-child > .icons:first-child {
-	background-color: #0088cc;
+	background-color: #2d3e50;
 }
 
 .list.list-ordened li:before {
@@ -2914,7 +2914,7 @@ html[dir="rtl"] #header .tip.skin:before {
 @media (min-width: 992px) {
 	#header .header-nav-main nav > ul > li.open > a,
 	#header .header-nav-main nav > ul > li:hover > a {
-		background: #0088cc;
+		background: #243344;
 	}
 
 	#header .header-nav-main nav > ul > li.dropdown .dropdown-menu {
@@ -4410,12 +4410,12 @@ ul.history li .featured-box .box-content {
 
 .recent-posts .date .month,
 article.post .post-date .month {
-	background-color: #0088cc;
+	background-color: #2d3e50;
 }
 
 .recent-posts .date .day,
 article.post .post-date .day {
-	color: #0088cc;
+	color: #2d3e50;
 }
 
 .slider .tp-bannertimer {

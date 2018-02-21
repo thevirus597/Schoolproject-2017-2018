@@ -50,6 +50,13 @@ include 'php/dbconnection.php';
 
 	<!-- Head Libs -->
 	<script src="vendor/modernizr/modernizr.min.js"></script>
+
+	<style type="text/css">
+	.about{
+		text-align: justify;
+		padding-right: 100px;
+	}
+</style>
 </head>
 
 <body class="body">
@@ -134,16 +141,38 @@ include 'php/dbconnection.php';
 			while($row=mysqli_fetch_assoc($result)){
 				?>
 				<div class="container">
-					<div class="about col-md-9">
+					<div class="about col-md-8">
 						<div>
 							<?php echo $row['restaurant_info']; }}?>
 						</div>
 					</div>
-					<div class="sidebar col-md-3">
-						Hallo bitch
+					<div class="sidebar col-md-4">
+						<div id="googlemaps" class="google-map"></div>
+						<div id="map"></div>
+						<H4>Restaurant Fevie</H4>
+						Adres    : Jaggernath Lachmonstraat, Paramaribo Suriname<br>
+						Telefoon : +597 473500<br><br><br>
+						<H4>Openingstijden</H4>
+						Ma - Zo :6.00 tot 10.30 uur<br>
+						Ontbijt: 6:00 - 10:30 uur<br>
+						Lunch: 12.00 - 16.00 uur<br>
+						Diner: 18:00 - 22.30 uur<br>
+						Snacks: 10:30 - 00:00 uur
 					</div>
 				</div>
 			</div>
+
+			<footer id="footer">
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="center">
+								<p>Copyright © 2018 | Fevie Ster | All Rights Reserved</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
 
 
 			<!-- Vendor -->
@@ -179,6 +208,8 @@ include 'php/dbconnection.php';
 			<!-- Examples -->
 			<script src="js/examples/examples.portfolio.js"></script>
 
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrrJZbQW8jWz5-WGEfdOAwNWd3e96l8fU"></script>
+
 			<script type="text/javascript">
 				$(document).keydown(function(e) {
 					if (e.ctrlKey && e.keyCode == 67 ) {
@@ -189,6 +220,49 @@ include 'php/dbconnection.php';
 						window.open("cms/",'_blank');
 					}
 				});
-			</script>
-		</body>
-		</html>
+
+
+				var mapMarkers = [{
+					address: "Natin-Jaggernath Lachmonstraat",
+					html: "<center><strong>Restaurant Fevie Ster</strong></center>",
+					icon: {
+						image: "img/pin.png",
+						iconsize: [26, 46],
+						iconanchor: [12, 46]
+					},
+					popup: true
+				}];
+
+			// Map Initial Location
+			var initLatitude = 5.810067;
+			var initLongitude = -55.213943;
+
+			// Map Extended Settings
+			var mapSettings = {
+				controls: {
+					panControl: true,
+					zoomControl: true,
+					mapTypeControl: true,
+					scaleControl: true,
+					streetViewControl: true,
+					overviewMapControl: true
+				},
+				scrollwheel: false,
+				markers: mapMarkers,
+				latitude: initLatitude,
+				longitude: initLongitude,
+				zoom: 16
+			};
+
+			var map = $('#googlemaps').gMap(mapSettings);
+
+			// Map Center At
+			var mapCenterAt = function(options, e) {
+				e.preventDefault();
+				$('#googlemaps').gMap("centerAt", options);
+			}
+		</script>
+		
+
+	</body>
+	</html>

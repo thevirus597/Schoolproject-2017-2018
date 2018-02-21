@@ -15,13 +15,19 @@ while ($row = mysqli_fetch_assoc($sql)) {
 }
 $currentpage = basename($_SERVER['PHP_SELF'],'.php');
 ?>
+
+<style type="text/css">
+.dropdown, .dropup {
+    text-align: center;
+}
+</style>
 <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                        <img alt="image" class="img-circle" src="<?php echo $photo ?>" width="50px" height="50px" />
+                        <img alt="image" class="img-circle" src="<?php echo $photo ?>" width="100px" height="75px" />
                     </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $voornaam." ".$familienaam; ?></strong>

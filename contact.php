@@ -181,27 +181,26 @@
 				</div>
 				<div class="col-md-6">
 
-					<h4 class="heading-primary mt-lg">Get in <strong>Touch</strong></h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					<h4 class="heading-primary mt-lg">Contact <strong>Ons</strong></h4>
+					<p>Heeft u vragen, zijn er onduidelijkheden? Neem dan gerust contact met ons op.</p>
 
 					<hr>
 
 					<h4 class="heading-primary">The <strong>Office</strong></h4>
 					<ul class="list list-icons list-icons-style-3 mt-xlg">
-						<li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>
-						<li><i class="fa fa-phone"></i> <strong>Phone:</strong> (123) 456-789</li>
-						<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>
+						<li><i class="fa fa-map-marker"></i> <strong>Adres:</strong> Jaggernath Lachmonstraat, Paramaribo Suriname</li>
+						<li><i class="fa fa-phone"></i> <strong>Telefoon:</strong> (+597) 456-789</li>
+						<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">info@5sterren.com</a></li>
 					</ul>
 
 					<hr>
 
-					<h4 class="heading-primary">Business <strong>Hours</strong></h4>
+					<h4 class="heading-primary">Kantoor <strong>Uren</strong></h4>
 					<ul class="list list-icons list-dark mt-xlg">
-						<li><i class="fa fa-clock-o"></i> Monday - Friday - 9am to 5pm</li>
-						<li><i class="fa fa-clock-o"></i> Saturday - 9am to 2pm</li>
-						<li><i class="fa fa-clock-o"></i> Sunday - Closed</li>
+						<li><i class="fa fa-clock-o"></i> Maandag - Vrijdag - 09:00u tot 17:00u</li>
+						<li><i class="fa fa-clock-o"></i> Zaterdag - Zondag - 09:00uam tot 15:00u</li>
+						<li><i class="fa fa-clock-o"></i> Feestdagen - 09:00u tot 12:00u</li>
 					</ul>
-
 				</div>
 
 			</div>
@@ -209,6 +208,18 @@
 		</div>
 
 	</div>
+	<footer id="footer">
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row">
+					
+					<div class="center">
+						<p>Copyright © 2018 | Fevie Ster | All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 	<!-- Vendor -->

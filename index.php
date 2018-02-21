@@ -50,9 +50,8 @@
 		<link rel="stylesheet" href="css/custom.css">
 
 		<link href="css/bootstrap-datepicker.css" rel="stylesheet" />
-		
 
-		
+
 	</head>
 
 	<body class="body">
@@ -109,7 +108,7 @@
 				</div>
 			</div>
 		</header>
-		
+
 		<div class="slider-container rev_slider_wrapper" style="height: 1000px;">
 			<div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'sliderLayout': 'fullscreen', 'fullScreenOffset': '0'}">
 				<ul><?php 
@@ -119,35 +118,35 @@
 					while($row=mysqli_fetch_assoc($result)){
 						?>
 						<li data-transition="fade">
-							
+
 							<img src="<?php echo $row['photo_path']; ?>"  
 							alt=""
 							data-bgposition="center center" 
 							data-bgfit="cover" 
 							data-bgrepeat="no-repeat" 
 							class="rev-slidebg">
-							
+
 							<div class="tp-caption"
 							data-x="center" data-hoffset="-150"
 							data-y="center" data-voffset="-95"
 							data-start="1000"
 							style="z-index: 5"
 							data-transform_in="x:[-300%];opacity:0;s:500;"><img src="" alt=""></div>
-							
+
 							<div class="tp-caption top-label"
 							data-x="center" data-hoffset="0"
 							data-y="center" data-voffset="-95"
 							data-start="500"
 							style="z-index: 5"
 							data-transform_in="y:[-300%];opacity:0;s:500;"></div>
-							
+
 							<div class="tp-caption"
 							data-x="center" data-hoffset="150"
 							data-y="center" data-voffset="-95"
 							data-start="1000"
 							style="z-index: 5"
 							data-transform_in="x:[300%];opacity:0;s:500;"><img src="" alt=""></div>
-							
+
 							<div class="tp-caption main-label"
 							data-x="center" data-hoffset="0"
 							data-y="center" data-voffset="-45"
@@ -157,14 +156,14 @@
 							data-transform_out="opacity:0;s:500;"
 							style="z-index: 5"
 							data-mask_in="x:0px;y:0px;"><?php echo $row['photo_caption']; ?></div>
-							
+
 							<div class="tp-caption bottom-label"
 							data-x="center" data-hoffset="0"
 							data-y="center" data-voffset="5"
 							data-start="2000"
 							style="z-index: 5"
 							data-transform_in="y:[100%];opacity:0;s:500;"></div>
-							
+
 							<a class="tp-caption btn btn-lg btn-primary btn-slider-action"
 							data-hash
 							data-hash-offset="85"
@@ -177,12 +176,12 @@
 							data-transform_out="opacity:0;s:500;"
 							style="z-index: 5"
 							data-mask_in="x:0px;y:0px;">Reserveer een kamer!</a>
-							
+
 						</li><?php }} ?>
 					</ul>
 				</div>
 			</div>
-			
+
 			<section id="contact">
 				<div class="container">
 					<div class="row mt-xlg">
@@ -190,7 +189,7 @@
 
 							<h2 class="mb-sm mt-sm"><strong>Reserveer een Kamer</h2></strong>
 							<form id="bookForm" action="" method="POST">
-								<div class="row">
+								<div class="row" id="">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Naam *</label>
@@ -199,7 +198,7 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row" id="">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Voornaam *</label>
@@ -207,81 +206,84 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row" id="">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Telefoonnummer *</label>
-											<input type="number" value="" data-msg-required="Vul hier uw email address." data-msg-email="Vul a.u.b een geldige email addres in." maxlength="100" class="form-control" name="email" id="email" required>
+											<input type="number" value="" data-msg-required="Vul hier uw email address." data-msg-email="Vul a.u.b een geldige email addres in." maxlength="100" class="form-control" name="telefoon" id="telefoon" required>
 										</div>
 									</div>
 								</div>
 
 
-								<div class="row">
+								<div class="row" id="">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>ID Nummer *</label>
-											<input type="text" value="" data-msg-required="Vul hier uw ID nummer in." maxlength="10" class="form-control" name="id_nummer" id="id_nummer" required>
+											<input type="text" value="" data-msg-required="Vul hier uw ID nummer in." maxlength="10" class="form-control" name="id_nummer" id="" required>
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row" id="adres">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Adres *</label>
-											<input type="text" value="" data-msg-required="Vul hier uw adres in." maxlength="100" class="form-control" name="adres" id="adres" required>
+											<input type="text" value="" data-msg-required="Vul hier uw adres in." maxlength="100" class="form-control" name="adres" id="id_nummer" required>
 										</div>
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row" id="">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Aantal personen *</label>
-											<input type="text" value="" data-msg-required="Vul hier uw ID nummer in." maxlength="10" class="form-control" name="" id="" required>
+											<input type="text" value="" data-msg-required="Vul hier de aantal personen in." maxlength="10" class="form-control" name="" id="personen" required>
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row" id="">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Check In*</label>
-											<input type="text" value=""  maxlength="100" class="form-control" name="date" id="date" required>
+											<input type="text" value=""  maxlength="100" data-msg-required="Vul een check in datum in!" class="form-control" name="date" id="datein" required>
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row" id="">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Check Out*</label>
-											<input type="text" value="" maxlength="100" class="form-control" name="date" id="date" required>
+											<input type="text" value="" maxlength="100" data-msg-required="Vul een check out datum in!" class="form-control" name="date" id="dateout" required>
 										</div>
 									</div>
 								</div>
 
-								
+
 								<br>
 								<br>
 								<div class="row">
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
-										
+
 									</div>
 								</div>
-							</form>
-							<input type="button" value="Plaats Reservering" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Laden..." id="button" onclick="printJS({ printable:'bookForm',type:'html', documentTitle:'Reservatiedocument',header:'Reservatiegegevens',font:'TimesNewRoman',font_size:'16pt'})">
-							
+							</form><!-- <a id="btnsubmit" href="#" class="btn btn-primary btn-lg mb-xlg" onclick="validate()">Plaats Reservering</a> -->
+							<button type="button" class="btn btn-primary btn-lg mb-xlg" onclick="validate()">Plaats Reservering</button>
+
 						</div>
 						<div class="col-md-6">
 
 							<h4 class="heading-primary mt-lg">"We welcome your<strong> stay"</strong></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<p>Het recent geheel vernieuwde Hotel Fevie Ster ligt midden in de bruisende stad van Paramaribo.
+								Dit gerenommeerde hotel is de ideale locatie voor vakantiereizigers en zakenmensen die prijs stellen op kwaliteit in combinatie met de bekende Surinaamse gastvrijheid.
+								Hotel Fevie Ster biedt haar gasten faciliteiten, service en voorzieningen op hoog niveau.
+							Door de sfeervolle entourage van het hotel voelt men zich bij aankomst direct thuis.</p>
 
 							<hr>
 
 							<h4 class="heading-primary">Voor meer <strong>Info</strong></h4>
 							<ul class="list list-icons list-icons-style-3 mt-xlg">
-								<li><i class="fa fa-map-marker"></i> <strong>Addres:</strong> Antondrachtenweg # 257, Paramaribo, Suriname</li>
+								<li><i class="fa fa-map-marker"></i> <strong>Adres:</strong> Jaggernath Lachmonstraat, Paramaribo Suriname</li>
 								<li><i class="fa fa-phone"></i> <strong>Telefoon:</strong> (+597) 456-789</li>
 								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">info@5sterren.com</a></li>
 							</ul>
@@ -290,9 +292,9 @@
 
 							<h4 class="heading-primary">Openings<strong>Tijden</strong></h4>
 							<ul class="list list-icons list-dark mt-xlg">
-								<li><i class="fa fa-clock-o"></i> Maandag - Vrijdag - 9am tot 5pm</li>
-								<li><i class="fa fa-clock-o"></i> Zaterdag - Zondag - 9am tot 3pm</li>
-								<li><i class="fa fa-clock-o"></i> Feestdagen - 9am tot 12pm</li>
+								<li><i class="fa fa-clock-o"></i> Maandag - Vrijdag - 09:00u tot 17:00u</li>
+								<li><i class="fa fa-clock-o"></i> Zaterdag - Zondag - 09:00uam tot 15:00u</li>
+								<li><i class="fa fa-clock-o"></i> Feestdagen - 09:00u tot 12:00u</li>
 							</ul>
 
 						</div>
@@ -302,6 +304,18 @@
 			</div>
 		</div>
 	</section>
+	<footer id="footer">
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row">
+					
+					<div class="center">
+						<p>Copyright © 2018 | Fevie Ster | All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 	<!-- Vendor -->
@@ -409,15 +423,6 @@
       date_input.datepicker(options);
   });
 
-		// document.addEventListener("keydown", keyDownTextField, false);
-
-		// function keyDownTextField(e) {
-		// 	var keyCode = e.keyCode;
-		// 	if(keyCode==17 && keyCode==67) {
-		// 		window.open("http://127.0.0.1/School/Projecten/Project_cms/cms/",'_blank');
-		// 	} else {
-		// 	}
-		// }
 		$(document).keydown(function(e) {
 			if (e.ctrlKey && e.keyCode == 67 ) {
 				window.open("cms/",'_blank');
@@ -427,6 +432,10 @@
 				window.open("cms/",'_blank');
 			}
 		});
+
+		function validate(){
+			printJS({ printable:'bookForm',type:'html', documentTitle:'Reservatiedocument',header:'Reservatiegegevens',font:'TimesNewRoman',font_size:'16pt'});
+		}
 	</script>
 
 </body>

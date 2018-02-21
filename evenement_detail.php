@@ -144,6 +144,19 @@ include 'php/dbconnection.php';
 						</div>
 					</div>
 
+					<footer id="footer">
+						<div class="footer-copyright">
+							<div class="container">
+								<div class="row">
+									
+									<div class="center">
+										<p>Copyright © 2018 | Fevie Ster | All Rights Reserved</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</footer>
+
 					<!-- Vendor -->
 					<script src="vendor/jquery/jquery.min.js"></script>
 					<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
